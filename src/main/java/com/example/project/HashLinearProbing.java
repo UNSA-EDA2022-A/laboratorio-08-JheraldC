@@ -59,7 +59,7 @@ public class HashLinearProbing {
         }
 
         for (int i = 0; i < hsize; i++) {
-            if (buckets[hash] != null && buckets[hash].DNI.equals(wrappedInt)) {
+            if (buckets[hash] != null && buckets[hash].DNI.equals(dni)) {
                 buckets[hash].DNI = AVAILABLE;
                 size--;
                 return;
@@ -76,7 +76,7 @@ public class HashLinearProbing {
 
     public void displayHashtable() {
         for (int i = 0; i < hsize; i++) {
-            if (buckets[i] == null || buckets[i].DNI == AVAILABLE) {
+            if (buckets[i] == null || buckets[i].DNI.equals(AVAILABLE)) {
                 System.out.println("Celda " + i + ": Vacia");
             } else {
                 System.out.println("Celda " + i + ": " + buckets[i].toString());
