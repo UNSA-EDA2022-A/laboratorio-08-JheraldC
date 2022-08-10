@@ -2,16 +2,18 @@ package com.example.project;
 
 import java.util.Random;
 
+import java.util.Random;
+
 public class HashLinearProbing {
     private int hsize; // tamano de la tabla hash
     private Persona[] buckets; // array que representa la tabla hash
-    private Integer AVAILABLE;
+    private String AVAILABLE;
     private int size; // cantidad de elementos en la tabla hash
 
     public HashLinearProbing(int hsize) {
         this.buckets = new Persona[hsize];
         this.hsize = hsize;
-        this.AVAILABLE = Integer.MIN_VALUE;
+        this.AVAILABLE = String.valueOf(Integer.MIN_VALUE);
         this.size = 0;
     }
 
@@ -84,7 +86,7 @@ public class HashLinearProbing {
         }
     }
 
-    public int findHash(String dni) {
+    public String findHash(String dni) {
         int hash = hashing(dni);
 
         if (isEmpty()) {
@@ -128,13 +130,10 @@ public class HashLinearProbing {
 
    /* public static void main (String[] args){
         HashLinearProbing tb = new HashLinearProbing(10);
-
         Random rd = new Random();
-
         for(int i = 0; i < 5; i++){
             tb.insertHash(rd.nextInt(100));
         }
-
         tb.displayHashtable();        
-   */ }
+    }*/
 }
